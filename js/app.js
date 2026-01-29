@@ -164,12 +164,6 @@ function renderHome() {
             </div>
           </div>
 
-          <div style="margin-top:14px">
-            <img src="assets/discord/command.png" alt="Discord command screenshot" style="max-width:380px;border-radius:8px;border:1px solid rgba(255,255,255,0.03)">
-            <img src="assets/discord/result.png" alt="Discord result screenshot" style="max-width:380px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);margin-left:12px">
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="section">
