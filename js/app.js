@@ -194,8 +194,8 @@ function renderHome() {
 
         <form id="feedbackForm" class="feedback-form" novalidate>
           <div class="fb-grid">
-            <input id="fbName" class="fb-input" placeholder="Your name (optional)" aria-label="Your name">
-            <input id="fbEmail" class="fb-input" placeholder="Email (optional)" type="email" aria-label="Email address">
+            <input id="fbName" class="fb-input" placeholder="Your name " aria-label="Your name">
+            <input id="fbEmail" class="fb-input" placeholder="Email " type="email" aria-label="Email address">
           </div>
 
           <label class="rating-label muted">How would you rate Numexa?</label>
@@ -563,25 +563,23 @@ function initFeedbackForm() {
 
     showFBStatus('Saved locally — attempting to send...');
 
-    // Try to send to server endpoint if it exists
     try {
-      const res = await fetch('/api/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (res.ok) {
-        showFBStatus('Thanks — feedback sent!');
-        form.reset();
-        rating = 0;
-        updateStars();
-      } else {
-        throw new Error('server responded ' + res.status);
-      }
+      await emailjs.send(
+        "numexa_gmail",
+        "numexa_email_template",
+        payload
+      );
+
+      showFBStatus("Thanks! Feedback sent successfully.");
+      form.reset();
+      rating = 0;
+      updateStars();
+
     } catch (err) {
-      console.warn('feedback send failed', err);
-      showFBStatus('Saved locally. Unable to send right now.', true);
+      console.error(err);
+      showFBStatus("Failed to send. Saved locally.", true);
     }
+
   });
 
   // init state
