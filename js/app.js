@@ -230,6 +230,31 @@ function renderHome() {
     
 
     </section>
+    <section class="section">
+  <div class="panel" style="text-align:center">
+    <h2>About the Developer</h2>
+    <p class="muted" style="max-width:700px;margin:12px auto 0;">
+      Numexa is built and maintained by 
+      <strong style="color:var(--accent)">Aditya Uniyal</strong>, 
+      a student developer passionate about modern web engineering and computational tools.
+    </p>
+
+    <p class="muted" style="max-width:700px;margin:10px auto 0;">
+      This platform demonstrates real-world frontend architecture, JavaScript logic implementation,
+      math engine integration (Math.js), API handling, and responsive UI design — making it a
+      development-focused project.
+    </p>
+
+    <div style="margin-top:18px">
+      <a href="https://adityauniyal.is-a.dev" 
+         target="_blank" 
+         class="cta invite">
+         Visit Developer Portfolio
+      </a>
+    </div>
+  </div>
+</section>
+
   `;
 
   // wire up quick interactions after render
